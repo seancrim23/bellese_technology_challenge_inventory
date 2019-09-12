@@ -1,0 +1,16 @@
+.InventoryList {
+    border: 6px solid #948473;
+    background-color: #FFE3C6;
+    width: 65%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+  .InventoryList td {
+    border: 1px solid #948473;
+    padding: 4px 4px;
+  }
+  .InventoryList tbody td {
+    font-size: 13px;
+  }

@@ -1,0 +1,93 @@
+.NewItemForm {
+    border: 6px solid #948473;
+    background-color: #FFE3C6;
+    width: 65%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+  .NewItemForm h2 {
+    text-align: center;
+    padding-bottom: 5px;
+    color: orange;
+    font-family: 'Raleway',sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 72px;
+    margin: 0 0 0 0;
+    text-transform: uppercase;
+    background-color: #352d2f;
+  }
+
+.NewItemForm label{
+	display:block;
+    font-weight: bold;
+    padding-right: 3px;
+    margin-bottom: 5px;
+}
+
+.NewItemForm form{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.NewItemForm input[type=text], 
+.NewItemForm input[type=date],
+.NewItemForm input[type=datetime],
+.NewItemForm input[type=number],
+.NewItemForm input[type=search],
+.NewItemForm input[type=time],
+.NewItemForm input[type=url],
+.NewItemForm input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;	
+}
+.NewItemForm input[type=text]:focus, 
+.NewItemForm input[type=date]:focus,
+.NewItemForm input[type=datetime]:focus,
+.NewItemForm input[type=number]:focus,
+.NewItemForm input[type=search]:focus,
+.NewItemForm input[type=time]:focus,
+.NewItemForm input[type=url]:focus,
+.NewItemForm input[type=email]:focus,
+.NewItemForm textarea:focus, 
+.NewItemForm select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+
+.NewItemForm .FieldLong{
+	width: 100%;
+}
+.NewItemForm .field-select{
+	width: 100%;
+}
+.NewItemForm input[type=submit], .NewItemForm input[type=button]{
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+.NewItemForm input[type=submit]:hover, .NewItemForm input[type=button]:hover{
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.NewItemForm .required{
+	color:red;
+}
