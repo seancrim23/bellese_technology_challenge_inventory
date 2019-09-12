@@ -1,0 +1,17 @@
+{
+  "name": "inventory_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd -f ./config/env/dev.env nodemon src/index.js"
+  },
+  "author": "Sean Crim",
+  "license": "ISC",
+  "dependencies": {
+    "env-cmd": "^10.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.0",
+    "multer": "^1.4.2"
+  }
+}
