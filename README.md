@@ -1,2 +1,2 @@
-# bellese_technology_challenge_inventory
+# Bellese Technology Challenge Inventory
 Inventory Technology Challenge for Bellese.
