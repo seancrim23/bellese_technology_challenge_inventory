@@ -1,6 +1,7 @@
 const express = require('express');
 const Item = require('../models/item');
 const fs = require('fs');
+const { upload } = require('../utils/multerUtils');
 
 const itemRouter = express.Router();
 
@@ -28,18 +29,19 @@ itemRouter.get('/items/:id', async (req, res) => {
     }
 });
 
-itemRouter.post('/items', async (req, res) => {
-    const item = new Item(req.body);
-
-    item.image.data = fs.readFileSync(req.body.image);
-    const fileExtension = (req.body.image).split('.').pop();
-    item.image.contentType = `image/${fileExtension}`;
+itemRouter.post('/items', upload.single('imageData'), async (req, res, next) => {
+    const item = new Item({
+        name: req.body.name,
+        description: req.body.description,
+        imageName: req.body.imageName,
+        imageData: req.file.filename
+    });
 
     try{
         await item.save();
         res.status(201).send(item);
     } catch(e) {
-        res.status(500).send(e);
+        res.status(500).send(e.message);
     }
 });
 
@@ -58,9 +60,9 @@ itemRouter.delete('/items/:id', async (req, res) => {
     }
 });
 
-itemRouter.patch('/items/:id', async (req, res) => {
+itemRouter.patch('/items/:id', upload.single('imageData'), async (req, res) => {
     const bodyKeys = Object.keys(req.body);
-    const validProps = ['name', 'description', 'image'];
+    const validProps = ['name', 'description', 'imageName'];
     const isValidUpdate = bodyKeys.every(key => validProps.includes(key));
 
     try{
@@ -74,14 +76,11 @@ itemRouter.patch('/items/:id', async (req, res) => {
         }
 
         bodyKeys.forEach(key => { 
-            if(key === 'image'){
-                item[key].data = fs.readFileSync(req.body[key]);
-                const fileExtension = (req.body.image).split('.').pop();
-                item.image.contentType = `image/${fileExtension}`;
-            } else {
-                item[key] = req.body[key];
-            }
+            item[key] = req.body[key];
         });
+        if(req.file){
+            item['imageData'] = req.file.filename;
+        }
         await item.save();
         res.send(item);
     }catch(e){

@@ -41,8 +41,8 @@ export default function inventoryReducer(state = initialState, action) {
 
             copiedInventoryArray[editItemIndex].name = action.result.data.name;
             copiedInventoryArray[editItemIndex].description = action.result.data.description;
-            copiedInventoryArray[editItemIndex].image.data = action.result.data.image.data;
-            copiedInventoryArray[editItemIndex].image.contentType = action.result.data.image.contentType;
+            copiedInventoryArray[editItemIndex].imageData = action.result.data.imageData;
+            copiedInventoryArray[editItemIndex].imageName = action.result.data.imageName;
 
             return {
                 ...state,

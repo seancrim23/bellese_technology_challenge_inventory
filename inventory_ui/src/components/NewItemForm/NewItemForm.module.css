@@ -88,6 +88,3 @@ select{
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
 }
-.NewItemForm .required{
-	color:red;
-}

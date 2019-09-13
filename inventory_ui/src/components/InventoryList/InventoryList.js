@@ -31,9 +31,8 @@ _id: "5d7a80d52514b427d892732b"
                 key={item._id}
                 id={item._id}
                 name={item.name}
-                contentType={item.image.contentType}
                 description={item.description}
-                data={item.image.data}
+                data={item.imageData}
                 show={props.showItem}
                 delete={props.deleteItem}
                 />;

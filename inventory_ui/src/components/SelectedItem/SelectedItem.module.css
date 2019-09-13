@@ -1,6 +1,6 @@
 .SelectedItem {
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -14,9 +14,9 @@
   .SelectedItemContent {
     background-color: #FFE3C6;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     border: 6px solid #948473;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -33,3 +33,85 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .SelectedItemContent h3 {
+    text-align: center;
+    color: orange;
+    font-family: 'Raleway',sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 45px;
+    width: 100%;
+    margin: 0 0 0 0;
+    text-transform: uppercase;
+    background-color: #352d2f;
+  }
+
+  .EditForm {
+    padding-top: 20px;
+  }
+
+  .EditForm label{
+      display:block;
+      font-weight: bold;
+      padding-right: 3px;
+      margin-bottom: 5px;
+  }
+
+  .EditForm input[type=submit], .EditForm input[type=button], .EditForm button{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+  }
+  .EditForm input[type=submit]:hover, .EditForm input[type=button]:hover, .EditForm button{
+    background: #4691A4;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+  }
+
+  .EditForm input[type=text], 
+.EditForm input[type=date],
+.EditForm input[type=datetime],
+.EditForm input[type=number],
+.EditForm input[type=search],
+.EditForm input[type=time],
+.EditForm input[type=url],
+.EditForm input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;	
+}
+.EditForm input[type=text]:focus, 
+.EditForm input[type=date]:focus,
+.EditForm input[type=datetime]:focus,
+.EditForm input[type=number]:focus,
+.EditForm input[type=search]:focus,
+.EditForm input[type=time]:focus,
+.EditForm input[type=url]:focus,
+.EditForm input[type=email]:focus,
+.EditForm textarea:focus, 
+.EditForm select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+
+.EditForm .FieldLong{
+	width: 100%;
+}
+.EditForm .field-select{
+	width: 100%;
+}

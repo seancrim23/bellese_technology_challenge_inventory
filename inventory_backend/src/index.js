@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use('/uploads/', express.static('../inventory_ui/src/uploads')); // multer
 app.use(itemRouter);
 const port = process.env.EXPRESS_PORT || 3001;
 

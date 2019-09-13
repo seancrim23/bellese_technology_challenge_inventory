@@ -13,11 +13,23 @@ const itemSchema = new Schema({
         required: true,
         trim: true
     },
+    imageName: {
+        type: String,
+        default: 'none',
+        required: true
+    },
+    imageData: {
+        type: String,
+        required: true
+    }
+});
+
+/*original image storage
     image: {
         data: Buffer,
         contentType: String
     }
-});
+*/
 
 const itemModel = mongoose.model('Item', itemSchema);
 
