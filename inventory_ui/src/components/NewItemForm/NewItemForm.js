@@ -7,15 +7,15 @@ const NewItemForm = props => {
             <h2>Add a new item!</h2>
             <form onSubmit={props.submitNewItem} encType="multipart/form-data" >
                 <label>
-                    Name: <input type="text" name="name" onChange={props.checkCanSubmit}/>
+                    Name: <input className={classes.NameInput} type="text" name="name" onChange={props.checkCanSubmit}/>
                 </label>
                 <label>
-                    Description: <input type="text" name="description" onChange={props.checkCanSubmit}/>
+                    Description: <input className={classes.DescriptionInput} type="text" name="description" onChange={props.checkCanSubmit}/>
                 </label>
                 <label>
-                    Image: <input type="file" name="image" onChange={props.checkCanSubmit} accept=".gif,.jpg,.jpeg,.png"/>
+                    Image: <input className={classes.ImageInput} type="file" name="image" onChange={props.checkCanSubmit} accept=".gif,.jpg,.jpeg,.png"/>
                 </label>
-                    <input type="submit" value="Submit" disabled={props.submitDisabledProp} />
+                    <input className={classes.SubmitInput} type="submit" value="Submit" disabled={props.submitDisabledProp} />
             </form>
         </div>
     );

@@ -9,18 +9,18 @@ const SelectedItem = props => {
                 <span onClick={props.closeItem} className={classes.CloseItem}>&times;</span>
                 <form onSubmit={props.editItem} className={classes.EditForm} id={props.selectItem.id} encType="multipart/form-data" >
                     <label>
-                        Name: <input type="text" name="name" defaultValue={props.selectItem.name} />
+                        Name: <input className={classes.NameInput} type="text" name="name" defaultValue={props.selectItem.name} />
                     </label>
                     <label>
-                        Description: <input type="text" name="description" defaultValue={props.selectItem.description} />
+                        Description: <input type="text" className={classes.DescriptionInput} name="description" defaultValue={props.selectItem.description} />
                     </label>
                     <label>
-                        Current Image: <img alt={props.selectItem.description} style={{"width": "50px", "height": "50px"}} src={props.selectItem.imageData} />
+                        Current Image: <img className={classes.CurrentImage} alt={props.selectItem.description} style={{"width": "50px", "height": "50px"}} src={props.selectItem.imageData} />
                     </label>
                     <label>
-                        Change Image: <input type="file" name="image"/>
+                        Change Image: <input className={classes.ChangeImageInput} type="file" name="image"/>
                     </label>
-                    <input type="submit" value="EDIT" />
+                    <input className={classes.EditInput} type="submit" value="EDIT" />
                 </form>
             </div>
         </div>

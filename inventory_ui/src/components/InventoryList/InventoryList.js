@@ -24,7 +24,7 @@ _id: "5d7a80d52514b427d892732b"
     var inventory = null;
 
     if(props.inventory.length === 0){
-        inventory = <tr><td>No items currently in the inventory! Use the add item form above to add some new items!</td></tr>;
+        inventory = <tr><td className={classes.NoItems}>No items currently in the inventory! Use the add item form above to add some new items!</td></tr>;
     } else {
         inventory = props.inventory.map(item => {
             return <InventoryItem
