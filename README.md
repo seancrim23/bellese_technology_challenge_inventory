@@ -33,7 +33,7 @@ C:/mongodb/.../bin/mongod --dbpath C:/mongodb-data
 ##### Run the NodeJS backend
 - This step is very simple. In a command line, go the directory that you cloned the project to and run a command to move to the "inventory_backend" folder
 ```
-cd inventory_backend
+C:/directory/you/cloned/to/ cd inventory_backend
 ```
 - Now that you are in the backend, as long as you have correctly installed npm and have MongoDB running, you can run this command
 ```
@@ -52,7 +52,7 @@ Successfully connected to MongoDB instance!
 ##### Run the React frontend
 - Another simple step, you are basically doing the same thing you did in the previous step, except for this step you will be running the commands in "inventory_ui"
 ```
-cd inventory_ui
+C:/directory/you/cloned/to/ cd inventory_ui
 ```
 - now, like before, simply run the "npm start" command in the "inventory_ui" directory
 ```
