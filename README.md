@@ -13,13 +13,13 @@ Inventory Technology Challenge for Bellese.
   - Instructions to install and setup can be found [here](https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-windows/)
     - Why? We are using MongoDB to store all of the data for this application.
 
-##### After installing and setting up all of the above, run this Git command in a local directory:
+### After installing and setting up all of the above, run this Git command in a local directory:
 ```
 git clone https://github.com/seancrim23/bellese_technology_challenge_inventory.git
 ```
 - This will pull all of the code for the project into the local directory.
 
-##### Run MongoDB FIRST
+### Run MongoDB FIRST
 - In the instructions from above there should be a command example that you can use to start MongoDB locally, I personally use this command as I installed MongoDB directly under my C: drive
 ```
 C:/mongodb/.../bin/mongod --dbpath C:/mongodb-data
@@ -30,7 +30,7 @@ C:/mongodb/.../bin/mongod --dbpath C:/mongodb-data
 ```
 - If you see this, MongoDB is ready to go and is running on localhost at the default MongoDB port: 27017
 
-##### Run the NodeJS backend
+### Run the NodeJS backend
 - This step is very simple. In a command line, go the directory that you cloned the project to and run a command to move to the "inventory_backend" folder
 ```
 C:/directory/you/cloned/to/ cd inventory_backend
@@ -49,7 +49,7 @@ Web server started on port 3001!
 Successfully connected to MongoDB instance!
 ```
 
-##### Run the React frontend
+### Run the React frontend
 - Another simple step, you are basically doing the same thing you did in the previous step, except for this step you will be running the commands in "inventory_ui"
 ```
 C:/directory/you/cloned/to/ cd inventory_ui
@@ -70,11 +70,6 @@ You can now view inventory_ui in the browser.
 Note that the development build is not optimized.
 To create a production build, use npm run build.
 ```
-
-
-
-# add a how to
-- (how to locally set up the application)
 
 # TODO
 - clean up the edit/view form, make it look a bit more nice - DONE
