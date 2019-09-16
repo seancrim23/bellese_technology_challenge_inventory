@@ -37,6 +37,11 @@ C:/directory/you/cloned/to/ cd inventory_backend
 ```
 - Now that you are in the backend, as long as you have correctly installed npm and have MongoDB running, you can run this command
 ```
+npm install
+```
+- This command will install of the dependencies that exist in the npm package.json file. I do not store them in my Git because they take up too much space.
+- Once the install has completed, you can run this command
+```
 npm start
 ```
 - This will start the backend, if you see output like below then you will have correctly started the backend
@@ -54,7 +59,11 @@ Successfully connected to MongoDB instance!
 ```
 C:/directory/you/cloned/to/ cd inventory_ui
 ```
-- now, like before, simply run the "npm start" command in the "inventory_ui" directory
+- now, like before, simply run the "npm install" command in the "inventory_ui" directory
+```
+npm install
+```
+- Once the install is complete, you can now start the app like you did the backend using the below command
 ```
 npm start
 ```
