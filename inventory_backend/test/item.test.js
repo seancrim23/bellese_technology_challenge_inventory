@@ -1,8 +1,8 @@
 const request = require('supertest');
-const app = require('../src/index');
+const { app, server } = require('../src/index');
 const Item = require('../src/models/item');
 const { itemOne, itemOneId, itemTwo, itemTwoId, itemThree, itemThreeId, setupDatabase } = require('./utils/db');
- //LOOK INTO REFACTORING WITH MOCHA
+ 
 beforeEach(setupDatabase);
 
 const itemTestData = {
@@ -38,6 +38,16 @@ test('The add endpoint (POST /items) should successfully create a new item when 
 
 });
 
+test('The add endpoint (POST /items) should return a 500 error when invalid data is passed to the body of the request', async () => {
+
+    const errorAddResponse = await request(app).post('/items').field({
+        this: 'is',
+        a: 'test'
+    }).expect(500);
+    expect(errorAddResponse.error.message).toEqual('cannot POST /items (500)');
+
+});
+
 test('The get endpoint (GET /items) should correctly retrieve all data (itemOne, itemTwo, itemThree) that is loaded before the test', async () => {
 
     const response = await request(app).get('/items').expect(200);
@@ -55,6 +65,13 @@ test('The delete endpoint (DELETE /items/:id) should delete the correct data tha
     const deletedItemId = response.body._id;
     const searchItem = await Item.findById(deletedItemId);
     expect(searchItem).toBeNull();
+
+});
+
+test('The delete endpoint (DELETE /items/:id) should return a 404 error when passed an incorrect item id', async () => {
+
+    const deleteErrorResponse = await request(app).delete('/items/1234ThisIsATest').expect(404);
+    expect(deleteErrorResponse.error.message).toEqual('cannot DELETE /items/1234ThisIsATest (404)');
 
 });
 
@@ -85,6 +102,17 @@ test('The update endpoint (PATCH /items/:id) should update the selected item wit
 
 });
 
+test('The update endpoint (PATCH /items/:id) should throw a 404 error when an invalid item id is passed to it', async () => {
+
+    const updateItemErrorResponse = await request(app).patch(`/items/1234ThisIsATest`).field({
+        name: itemTestData.name,
+        description: itemTestData.description,
+        imageName: itemTestData.imageName
+    }).expect(404);
+    expect(updateItemErrorResponse.error.message).toEqual('cannot PATCH /items/1234ThisIsATest (404)');
+
+});
+
 test('The get one item endpoint (GET /items/:id) should retrieve the expected item when passed the items id', async () => {
 
     const getOneItemResponse = await request(app).get(`/items/${itemOneId}`).expect(200);
@@ -96,4 +124,16 @@ test('The get one item endpoint (GET /items/:id) should retrieve the expected it
     expect(getOneItemResponse.body.description).toEqual(itemOne.description);
     expect(getOneItemResponse.body.imageData).toEqual(itemOne.imageData);
 
+});
+
+test('The get one item endpoint (GET /items/:id) should throw a 404 error when passed an incorrect ID', async () => {
+
+    const getOneItemErrorResponse = await request(app).get(`/items/1234ThisIsATest}`).expect(404);
+    expect(getOneItemErrorResponse.error.message).toBe('cannot GET /items/1234ThisIsATest%7D (404)');
+
+});
+
+afterAll(async () => {
+    server.close();
+    await new Promise(resolve => setTimeout(() => resolve(), 500)); //quick fix to give more time to jest for closing the open handles. look into using mocha instead?
 });

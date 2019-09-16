@@ -30,14 +30,14 @@ itemRouter.get('/items/:id', async (req, res) => {
 });
 
 itemRouter.post('/items', upload.single('imageData'), async (req, res, next) => {
-    const item = new Item({
-        name: req.body.name,
-        description: req.body.description,
-        imageName: req.body.imageName,
-        imageData: req.file.filename
-    });
-
     try{
+        const item = new Item({
+            name: req.body.name,
+            description: req.body.description,
+            imageName: req.body.imageName,
+            imageData: req.file.filename
+        });
+
         await item.save();
         res.status(201).send(item);
     } catch(e) {
