@@ -1,7 +1,7 @@
 # Bellese Technology Challenge Inventory
 Inventory Technology Challenge for Bellese.
 
-# How to run this locally.
+# How to run this application locally.
 ### Tools you will need!
 - Git
   - Instructions to install can be found [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

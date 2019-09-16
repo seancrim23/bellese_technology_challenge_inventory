@@ -2,24 +2,7 @@ import React from 'react';
 import InventoryItem from './InventoryItem/InventoryItem';
 import classes from './InventoryList.module.css';
 
-const InventoryList = props => {
-
-    /*
-            <tr key={props._id}>
-            <td><img src={`data:${props.image.contentType};base64,${props.image.data}`} /></td>
-            <td>props.name</td>
-            <td>props.description</td>
-            <td><button onClick={props.edit}>EDIT</button></td>
-            <td><button onClick={props.delete}>DELETE</button></td>
-        </tr>
-            /*
-    0:
-description: "this is a test item"
-image: {data: {…}, contentType: "image/jpg"}
-name: "test item 1"
-__v: 0
-_id: "5d7a80d52514b427d892732b"
-    */ 
+const InventoryList = props => { 
 
     var inventory = null;
 
