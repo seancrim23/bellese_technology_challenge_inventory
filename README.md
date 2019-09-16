@@ -88,3 +88,4 @@ To create a production build, use npm run build.
 - [x] add testing
 - [ ] Look into replacing jest tests for the backend with mocha
 - [ ] refactor code in general - see if there is any redundant code or anything that could be written better
+- [ ] add webpack and babel to use for code deployment
