@@ -83,8 +83,8 @@ To create a production build, use npm run build.
 ##### Have fun!
 
 # TODO
-- clean up the edit/view form, make it look a bit more nice - DONE
-- figure out images (there has to be some way) - DONE - used multer to drop uploaded images off in the front end public/images, where static images are served when using create-react-app
-- add testing - DONE
+- [x] clean up the edit/view form, make it look a bit more nice
+- [x] figure out images (there has to be some way) - used multer to drop uploaded images off in the front end public/images, where static images are served when using create-react-app
+- [x] add testing
 - Look into replacing jest tests for the backend with mocha
 - refactor code in general - see if there is any redundant code or anything that could be written better
